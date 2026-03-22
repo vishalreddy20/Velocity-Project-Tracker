@@ -1,0 +1,93 @@
+.app {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(34, 197, 94, 0.08), transparent 34%),
+    radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.08), transparent 36%),
+    #f4f8fc;
+  color: #0f172a;
+  min-height: 100vh;
+  padding: 1.1rem 1.1rem 1.6rem;
+}
+
+.topBar {
+  align-items: center;
+  background: linear-gradient(115deg, #0b3142 0%, #184e77 100%);
+  border-radius: 16px;
+  color: #f8fafc;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+}
+
+.topBar h1 {
+  font-size: 1.45rem;
+  margin: 0;
+}
+
+.topBar p {
+  margin: 0.35rem 0 0;
+  max-width: 720px;
+}
+
+.presencePanel {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.avatarRow {
+  display: flex;
+}
+
+.avatar {
+  align-items: center;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 0.72rem;
+  font-weight: 700;
+  height: 30px;
+  justify-content: center;
+  margin-left: -7px;
+  width: 30px;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.viewSwitcher {
+  display: inline-flex;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.viewButton {
+  background: #e2e8f0;
+  border: 1px solid #c7d3e2;
+  border-radius: 10px;
+  color: #0f172a;
+  cursor: pointer;
+  font-weight: 800;
+  padding: 0.48rem 0.85rem;
+}
+
+.viewButtonActive {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .topBar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .presencePanel {
+    align-items: flex-start;
+  }
+}

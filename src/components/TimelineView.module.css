@@ -1,0 +1,78 @@
+.container {
+  background: #ffffff;
+  border: 1px solid #d8e0ea;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.scrollArea {
+  overflow: auto;
+}
+
+.timeline {
+  position: relative;
+}
+
+.headerRow,
+.row {
+  border-bottom: 1px solid #e7edf5;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 46px;
+}
+
+.taskColumn {
+  align-items: center;
+  border-right: 1px solid #e7edf5;
+  color: #0f172a;
+  display: flex;
+  font-size: 0.82rem;
+  font-weight: 700;
+  overflow: hidden;
+  padding: 0.55rem 0.7rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dayGrid {
+  min-height: 46px;
+  position: relative;
+}
+
+.dayCell {
+  align-items: center;
+  border-right: 1px solid #f0f4fa;
+  color: #64748b;
+  display: inline-flex;
+  font-size: 0.74rem;
+  height: 46px;
+  justify-content: center;
+}
+
+.bar {
+  border-radius: 999px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.marker {
+  border-radius: 0;
+  border-style: solid;
+  border-width: 7px 7px 0 7px;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+}
+
+.todayLine {
+  background: #ef4444;
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  width: 2px;
+  z-index: 10;
+}

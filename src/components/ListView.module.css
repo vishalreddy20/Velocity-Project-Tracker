@@ -1,0 +1,111 @@
+.container {
+  background: #ffffff;
+  border: 1px solid #d8e0ea;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.header {
+  background: #f8fafc;
+  border-bottom: 1px solid #d8e0ea;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+
+.headerCell {
+  background: transparent;
+  border: 0;
+  border-right: 1px solid #e3e9f2;
+  color: #0f172a;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.headerCell:last-child {
+  border-right: 0;
+  cursor: default;
+}
+
+.activeSort {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.viewport {
+  height: 520px;
+  overflow: auto;
+}
+
+.spacer {
+  position: relative;
+}
+
+.row {
+  align-items: center;
+  border-bottom: 1px solid #edf2f8;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.cell {
+  font-size: 0.82rem;
+  overflow: hidden;
+  padding: 0.75rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.danger {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.select {
+  background: #f8fafc;
+  border: 1px solid #d1dbe8;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  padding: 0.28rem 0.4rem;
+  width: 100%;
+}
+
+.counter {
+  color: #475569;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0.6rem 0.8rem;
+}
+
+.emptyState {
+  align-items: center;
+  background: #ffffff;
+  border: 1px dashed #9fb2cb;
+  border-radius: 14px;
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  min-height: 340px;
+}
+
+.emptyState h3,
+.emptyState p {
+  margin: 0;
+}
+
+.clearButton {
+  background: #0f172a;
+  border: 0;
+  border-radius: 9px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.46rem 0.7rem;
+}

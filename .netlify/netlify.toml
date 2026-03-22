@@ -1,0 +1,28 @@
+plugins = []
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "C:\\Users\\reddy\\OneDrive\\Desktop\\fsd1\\fsd_app\\dist"
+publishOrigin = "ui"
+commandOrigin = "ui"
+base = "C:\\Users\\reddy\\OneDrive\\Desktop\\fsd1\\fsd_app"
+command = "npm run build"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
