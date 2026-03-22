@@ -13,11 +13,10 @@ Frontend assessment implementation for a multi-view project tracker built with R
 - **Custom Drag-and-Drop** (zero external DnD libs): Card ghost preview, placeholder zones, drop-zone highlighting, snap-back animation on invalid drop
 - **Live Virtual Scrolling**: From-scratch implementation with 5-row buffer, accurate scrollbar sync
 - **Simulated Real-Time Collaboration**:
-  - **Presence avatars** with animated transitions between cards (600ms smooth easing)
-  - **Dynamic active-user count** (2-4 users with interpolated join/leave cycles)
+  - **Presence avatars** with animated transitions between cards
+  - **Dynamic active-user count** (stable 2-3 users, with rare changes up to 4)
   - **Activity status encoding** (viewing vs editing modes per user)
-  - **Conflict detection** (shows warning when 2+ users edit same task)
-  - **Typing indicators** (simulated activity UI on card hover)
+  - **Stable simulation cadence** (2.5s interval updates)
 
 ### State & Sync
 - **URL-synced filters**: Status, priority, assignee, due date range  
@@ -75,8 +74,6 @@ netlify deploy --prod --dir=dist
    npm run deploy
    ```
 
-After deployment, replace placeholder below with live URL:
-
 **Live Demo**: https://guileless-pika-5391e0.netlify.app
 
 ## Setup & Development
@@ -94,7 +91,7 @@ npm install
 ```bash
 npm run dev
 ```
-Opens on `http://localhost:5173` by default.
+Opens on `http://localhost:5173` by default (or next available port if occupied).
 
 ### Production Build
 ```bash
@@ -104,7 +101,7 @@ npm run preview  # Test production build locally
 
 ### Type Checking
 ```bash
-npm run tsc  # or: npx tsc --noEmit
+npm run typecheck  # or: npx tsc --noEmit
 ```
 
 ## Architecture Decisions
@@ -117,7 +114,7 @@ Zustand was chosen over Context API + useReducer because this UI has **cross-cut
 - ✅ Integrates directly with URL sync (search params → store)
 
 ### Virtual Scrolling Algorithm
-List view uses fixed-height rows (computed from first card) with:
+List view uses fixed-height rows (60px) with:
 - **Visible window**: Only rows in viewport + 5-row buffer above/below
 - **Absolute positioning**: Visible rows translated to calculated Y offset
 - **Full-height spacer**: Preserves scrollbar proportions and scroll space
@@ -135,7 +132,7 @@ Avatar movement from card to card uses:
 - **Phase 1 (RAF)**: Set avatar phase to 'start' with initial coords
 - **Phase 2 (RAF)**: Flip phase to 'move' triggering CSS transition
 - **Phase 3 (setTimeout)**: Remove component after transition completes  
-- **Effect**: Smooth 600ms curve-eased animation with automatic cleanup
+- **Effect**: Smooth transition with automatic cleanup
 
 ## Key Implementation Files
 
@@ -161,7 +158,6 @@ Avatar movement from card to card uses:
 - [ ] Scroll List view with 500+ tasks (smooth, no lag)
 - [ ] Open Timeline for this month
 - [ ] Filter by priority → URL updates with `?priority=critical`
-- [ ] Hover tasks to see activity badges (simulated real-time)
 - [ ] Observe 2-4 active users cycling in/out
 
 ### Performance Validation
